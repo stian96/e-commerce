@@ -4,6 +4,8 @@
     --light: #fff;
     --dark: rgb(30, 30, 30);
     --hover: green;
+    --hover-light: rgb(2, 160, 2);
+    --gray: rgba(233, 230, 230, 0.903);
 }
 
 .navigation {
@@ -11,14 +13,14 @@
 
     &__banner {
         padding: 0.87rem;
-        background: var(--dark);
+        background: var(--gray);
 
         @include flex-container;
         justify-content: space-between;
 
         .navigation__costumer-service, .navigation__sale, .navigation__mode {
             @include text-style;
-            color: var(--light);
+            color: var(--dark);
             text-transform: uppercase;
         }
 
@@ -66,4 +68,31 @@
         transform: scale(1.6);
     }
 
+    &.dark-mode {
+
+        .navigation__banner {
+            background-color: var(--dark);
+        }
+
+        .navigation__costumer-service, .navigation__sale, .navigation__mode {
+            color: var(--light);
+        }
+
+        .navigation__mode {
+
+            &:hover {
+                color: var(--hover-light);
+            }
+        }
+
+        .navigation__link, .navigation__logo {
+            color: var(--light);
+        }
+
+        .navigation__link:hover {
+            color: var(--hover-light);
+        }
+    }
 }
+
+

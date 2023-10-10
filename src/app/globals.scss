@@ -1,6 +1,22 @@
 @import '../styles/navigation.scss';
 
+:root {
+  --light: #fff;
+  --dark: rgb(30, 30, 30);
+  --deep-marine: #101c28;
+  --hover: green;
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.dark-mode {
+  background-color: var(--deep-marine);
 }

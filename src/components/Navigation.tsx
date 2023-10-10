@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link'
 
 import '../styles/navigation.scss';
 import '../app/globals.scss';
 
-const Navigation = () => {
-    const [isDarkMode, setDarkMode] = useState(false);
+type NavigationProp = {
+    isDarkMode: boolean;
+    toggleDarkMode: () => void;
+}
+
+const Navigation: React.FC<NavigationProp> = ({ isDarkMode, toggleDarkMode }) => {
 
     return (
-        <nav className='navigation'>
+        <nav className={`navigation ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
             <div className='navigation__banner'>
                 <Link className='navigation__costumer-service 'href="/costumer" passHref>CostumerService</Link>
                 <span className='navigation__sale'>Final Sale - Up To 60% Discount</span>
                 <button 
                     type='button' 
                     className='navigation__mode'
-                    onClick={() => {
-                        console.log("Button clicked, Dark mode:", !isDarkMode);
-                        setDarkMode(prevMode => !prevMode);
-                    }}
+                    onClick={toggleDarkMode}
                     >
                         {isDarkMode ? 'Light Mode' : 'Dark Mode'}
                 </button>
