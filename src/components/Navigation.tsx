@@ -5,8 +5,8 @@ import '../styles/navigation.scss';
 import '../app/globals.scss';
 
 type NavigationProp = {
-    isDarkMode: boolean;
-    toggleDarkMode: () => void;
+    isDarkMode?: boolean;
+    toggleDarkMode?: () => void;
 }
 
 const Navigation: React.FC<NavigationProp> = ({ isDarkMode, toggleDarkMode }) => {

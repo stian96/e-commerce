@@ -1,8 +1,11 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
+import Card from '../components/Card';
 import { Product } from "../domain/types/cartTypes";
 import { generateRandomProductList } from '../domain/product';
+
+import '../styles/card.scss';
 
 const ProductPage = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -12,18 +15,14 @@ const ProductPage = () => {
     }, []);
 
     return (
-        <>
-        <Navigation />
-        <div>
-            <ul>
+        <div className="outer-container">
+            <Navigation />
+            <div className="grid-container">
                 {products.map(product => (
-                    <li key={product.id}>
-                        {product.title} - {product.price}
-                    </li>
+                    <Card key={product.id} product={product} />
                 ))}
-            </ul>
+            </div>
         </div>
-        </>
     );
 }
 
