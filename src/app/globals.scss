@@ -15,8 +15,10 @@
 .main-container {
   width: 100%;
   height: 100vh;
+  transition: background-color 0.3s ease;
 }
 
 .dark-mode {
+  transition: background-color 0.3s ease;
   background-color: var(--deep-marine);
 }

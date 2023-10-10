@@ -4,7 +4,7 @@
     --light: #fff;
     --dark: rgb(30, 30, 30);
     --hover: green;
-    --hover-light: rgb(2, 160, 2);
+    --hover-light: rgb(99, 186, 99);
     --gray: rgba(233, 230, 230, 0.903);
 }
 
@@ -14,6 +14,7 @@
     &__banner {
         padding: 0.87rem;
         background: var(--gray);
+        margin-bottom: 0.3rem;
 
         @include flex-container;
         justify-content: space-between;
@@ -71,6 +72,7 @@
     &.dark-mode {
 
         .navigation__banner {
+            transition: background-color 0.3s ease;
             background-color: var(--dark);
         }
 
