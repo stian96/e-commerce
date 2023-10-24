@@ -41,15 +41,16 @@
         justify-content: space-between;
         padding: 1rem 0;
 
-        gap: 2.5rem;
         list-style: none;
+        padding: 0;
     }
 
     &__link-container {
         @include flex-container;
         justify-content: center;
         width: 100%;
-        gap: 3rem;
+        gap: 3.5rem;
+        padding-right: 2rem;
     }
 
     &__item {
@@ -94,6 +95,28 @@
 
     .navigation__item a:hover {
         color: var(--hover-light);
+    }
+
+    .logo__image {
+        position: relative;
+    }
+
+    .logo {
+        position: relative;
+        border-radius: 100%; 
+    }
+
+    .logo::before {
+        content: "";
+        background-color: rgba(198, 237, 246, 0.647);
+        position: absolute;
+        top: 10.5%;
+        left: 12%;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+
+        box-shadow: 0.5px 0.5px 5px 0.1px #fff;
     }
 }
 

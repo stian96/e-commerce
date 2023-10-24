@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useDarkMode } from '@/context/DarkModeContext';
+import Image from 'next/image';
 
 import '../styles/navigation.scss';
 import '../app/globals.scss';
@@ -22,7 +23,9 @@ const Navigation = () => {
                 </button>
             </div>
             <ul className='navigation__list'>
-                <span className='navigation__logo'>Shop</span>
+                <li className='navigation__item logo'>
+                    <Image className='logo__image' src="/logo.png" alt="Shop Logo" width={80} height={80} />
+                </li>
                 <div className='navigation__link-container'>
                     <li className='navigation__item'>
                         <Link className='navigation__link' href="/" passHref>Home</Link>
