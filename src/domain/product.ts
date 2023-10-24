@@ -1,36 +1,28 @@
 import { Product, Category } from './types/cartTypes';
 
-const productCategories: Category[] = ['Electronic', 'Sport', 'Book', 'Furniture', 'Games']
+const productCategories: Category[] = ['PC', 'Phone', 'Audio', 'Camera', 'Games']
 const productData = {
-    'Electronic': [
-        { name: 'Smartphone', description: 'A high-end smartphone with a stunning display.' },
-        { name: 'Laptop', description: 'A powerful laptop suitable for all your needs.' },
-        { name: 'Headphones', description: 'Noise-cancelling headphones with deep bass.' },
-        { name: 'Camera', description: 'A DSLR camera with 4K video recording.' }
+    'PC': [
+        { name: 'Laptop', image: '/laptop.png', description: 'A powerful laptop suitable for all your needs.' },
+        { name: 'Desktop', image: '/desktop.png', description: 'A high-performance desktop for professional use.' },
+        { name: 'Tablet', image: '/tablet.png', description: 'A lightweight tablet with a vibrant display.' }
     ],
-    'Sport': [
-        { name: 'Football', description: 'A durable football suitable for all weather conditions.' },
-        { name: 'Tennis Racket', description: 'A lightweight racket for professional play.' },
-        { name: 'Running Shoes', description: 'Comfortable and breathable running shoes.' },
-        { name: 'Swimwear', description: 'Quick-drying swimwear with UV protection.' }
+    'Phone': [
+        { name: 'Smartphone', image: '/phone.png', description: 'A high-end smartphone with a stunning display.' },
+        { name: 'Smartwatch', image: '/watch.png', description: 'A stylish smartwatch with health tracking features.' }
     ],
-    'Book': [
-        { name: 'Mystery Novel', description: 'A thrilling mystery that will keep you on the edge of your seat.' },
-        { name: 'Science Fiction', description: 'A futuristic tale of space exploration.' },
-        { name: 'Biography', description: 'The life story of a famous personality.' },
-        { name: 'Cookbook', description: 'Delicious recipes from around the world.' }
+    'Audio': [
+        { name: 'Headphones', image: '', description: 'Noise-cancelling headphones with deep bass.' },
+        { name: 'Portable Speaker', image: '/speaker.png', description: 'A Bluetooth speaker with clear sound and deep bass.' }
     ],
-    'Furniture': [
-        { name: 'Sofa', description: 'A comfortable sofa made with premium materials.' },
-        { name: 'Dining Table', description: 'A spacious dining table made of solid wood.' },
-        { name: 'Wardrobe', description: 'A large wardrobe with ample storage space.' },
-        { name: 'Bed', description: 'A king-size bed with a soft mattress.' }
+    'Camera': [
+        { name: 'DSLR Camera', image: '/camera.png', description: 'A DSLR camera with 4K video recording.' },
+        { name: 'Action Camera', description: 'A compact camera for capturing adventures.' }
     ],
     'Games': [
-        { name: 'Board Game', description: 'A fun board game for the whole family.' },
-        { name: 'Video Game', description: 'An action-packed video game with stunning graphics.' },
-        { name: 'Card Game', description: 'A classic card game to enjoy with friends.' },
-        { name: 'Puzzle', description: 'A challenging puzzle to test your brain.' }
+        { name: 'Gaming Console', image: '/gaming_console.png', description: 'A next-gen gaming console with 4K gaming support.' },
+        { name: 'VR Headset', image: '/vr_headset.png', description: 'A virtual reality headset for immersive experiences.' },
+        { name: 'Video Game', image: '/game.png', description: 'An action-packed video game with stunning graphics.' }
     ]
 };
 
@@ -58,6 +50,7 @@ const generateRandomProduct = (id: number): Product => {
     return {
         id: id,
         title: productInfo.name,
+        image: productInfo.image,
         description: productInfo.description,
         category: category,
         price: getRandomPrice(10, 1000)

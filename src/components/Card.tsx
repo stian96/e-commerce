@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({ product }) => {
                 <div className='product-info'>
                     <h2 className='container__card-title'>{product.title}</h2>
                     <p className='container__card-description'>{product.description}</p>
-                    <p className='container__card-price'>{product.price}</p>
+                    <p className='container__card-price'>{`${product.price} $`}</p>
                     <button className='container__card-button' type='button'>Add to cart</button>
                 </div>
             </div>
