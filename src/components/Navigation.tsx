@@ -1,15 +1,13 @@
-import React from 'react';
+import React, { use, useContext } from 'react';
 import Link from 'next/link'
+import { useDarkMode } from '@/context/DarkModeContext';
 
 import '../styles/navigation.scss';
 import '../app/globals.scss';
 
-type NavigationProp = {
-    isDarkMode?: boolean;
-    toggleDarkMode?: () => void;
-}
 
-const Navigation: React.FC<NavigationProp> = ({ isDarkMode, toggleDarkMode }) => {
+const Navigation = () => {
+    const { isDarkMode, toggleDarkMode } = useDarkMode();
 
     return (
         <nav className={`navigation ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>

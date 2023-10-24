@@ -1,21 +1,19 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
+import { DarkModeProvider, useDarkMode } from '../context/DarkModeContext';
 import './globals.scss';
 
 
 const Home = () => {
-  const [isDarkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(prev => !prev);
-  }
+  const { isDarkMode } = useDarkMode();
 
   return(
-    <div className={`main-container ${isDarkMode ? 'dark-mode' : ''}`}>
-      <Navigation isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
-      <h1>Home page!</h1>
-    </div>
+    <DarkModeProvider>
+      <div className={`main-container ${isDarkMode ? 'dark-mode' : ''}`}>
+        <Navigation />
+      </div>
+    </DarkModeProvider>
   );
 }
 
