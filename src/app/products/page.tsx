@@ -1,11 +1,12 @@
 'use client';
-import React, { useState, useEffect } from "react";
-import Navigation from "@/components/Navigation";
-import Card from '../components/Card';
-import { Product } from "../domain/types/cartTypes";
-import { generateRandomProductList } from '../domain/product';
 
-import '../styles/card.scss';
+import React, { useState, useEffect } from "react";
+import Card from '../../components/Card';
+import { Product } from "../../domain/types/cartTypes";
+import { generateRandomProductList } from '../../domain/product';
+import Navigation from "@/components/Navigation";
+
+import '../../styles/card.scss';
 
 const ProductPage = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -15,7 +16,7 @@ const ProductPage = () => {
     }, []);
 
     return (
-        <div className='outer-container'>
+        <div className="outer-container">
             <Navigation />
             <div className="grid-container">
                 {products.map(product => (
