@@ -5,25 +5,29 @@ import Card from '../../components/Card';
 import { Product } from "../../domain/types/cartTypes";
 import { generateRandomProductList } from '../../domain/product';
 import Navigation from "@/components/Navigation";
+import { useDarkMode } from '../../context/DarkModeContext';
 
 import '../../styles/card.scss';
 
 const ProductPage = () => {
     const [products, setProducts] = useState<Product[]>([]);
+    const { isDarkMode } = useDarkMode();
 
     useEffect(() => {
         setProducts(generateRandomProductList())
     }, []);
 
     return (
-        <div className="outer-container">
-            <Navigation />
+        <>
+        <Navigation />
+        <div className={`outer-container ${isDarkMode ? 'dark-mode' : ''}`}>
             <div className="grid-container">
                 {products.map(product => (
                     <Card key={product.id} product={product} />
                 ))}
             </div>
         </div>
+        </>
     );
 }
 

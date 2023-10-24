@@ -68,32 +68,32 @@
 
         transform: scale(1.6);
     }
+}
 
-    &.dark-mode {
+.dark-mode {
 
-        .navigation__banner {
-            transition: background-color 0.3s ease;
-            background-color: var(--dark);
-        }
+    .navigation__banner {
+        transition: background-color 0.3s ease;
+        background-color: var(--dark);
+    }
 
-        .navigation__costumer-service, .navigation__sale, .navigation__mode {
-            color: var(--light);
-        }
+    .navigation__costumer-service, .navigation__sale, .navigation__mode {
+        color: var(--light);
+    }
 
-        .navigation__mode {
+    .navigation__mode {
 
-            &:hover {
-                color: var(--hover-light);
-            }
-        }
-
-        .navigation__link, .navigation__logo {
-            color: var(--light);
-        }
-
-        .navigation__link a:hover {
+        &:hover {
             color: var(--hover-light);
         }
+    }
+
+    .navigation__link, .navigation__logo {
+        color: var(--light);
+    }
+
+    .navigation__item a:hover {
+        color: var(--hover-light);
     }
 }
 

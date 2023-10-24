@@ -7,6 +7,7 @@
     --hover-light: rgb(99, 186, 99);
     --gray: rgba(233, 230, 230, 0.903);
     --gray-dark: rgba(202, 202, 202, 0.903);
+    --light-blue: #CDF5FD;
 }
 
 .outer-container {
@@ -34,9 +35,10 @@
 
     &__card {
         padding: 1rem;
-        border: 1px solid rgba(135, 134, 134, 0.548);
+        border: 1px solid #dddcdc;
         border-radius: 10px;
         width: 300px;
+        box-shadow: 1px 4px 15px 1px var(--gray);
 
         &-category {
             background-color: rgba(183, 178, 178, 0.548);
@@ -55,6 +57,7 @@
             background-color: rgb(225, 220, 220);
             font-size: 0.9rem;
             border: none;
+            border-radius: 10px;
         }
     }
 }
@@ -64,4 +67,25 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+}
+
+.dark-mode {
+
+    .container__card {
+        background-color: #243544;
+        border: none;
+        box-shadow: 1px 3px 10px 1px #495d6e;
+
+        &-category {
+            background-color: var(--light);
+        }
+
+        &-title, &-description, &-price {
+            color: var(--light);
+        }
+
+        &-button {
+            background-color: var(--light);
+        }
+    }
 }
