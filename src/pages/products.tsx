@@ -15,7 +15,7 @@ const ProductPage = () => {
     }, []);
 
     return (
-        <div className="outer-container">
+        <div className='outer-container'>
             <Navigation />
             <div className="grid-container">
                 {products.map(product => (

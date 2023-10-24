@@ -1,4 +1,3 @@
-import React, { use, useContext } from 'react';
 import Link from 'next/link'
 import { useDarkMode } from '@/context/DarkModeContext';
 
