@@ -12,12 +12,12 @@ const productData = {
         { name: 'Smartwatch', image: '/watch.png', description: 'A stylish smartwatch with health tracking features.' }
     ],
     'Audio': [
-        { name: 'Headphones', image: '', description: 'Noise-cancelling headphones with deep bass.' },
+        { name: 'Headphones', image: '/headphone.png', description: 'Noise-cancelling headphones with deep bass.' },
         { name: 'Portable Speaker', image: '/speaker.png', description: 'A Bluetooth speaker with clear sound and deep bass.' }
     ],
     'Camera': [
         { name: 'DSLR Camera', image: '/camera.png', description: 'A DSLR camera with 4K video recording.' },
-        { name: 'Action Camera', description: 'A compact camera for capturing adventures.' }
+        { name: 'Action Camera', image: '/compact_camera.png', description: 'A compact camera for capturing adventures.' }
     ],
     'Games': [
         { name: 'Gaming Console', image: '/gaming_console.png', description: 'A next-gen gaming console with 4K gaming support.' },
