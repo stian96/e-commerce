@@ -50,7 +50,8 @@
         justify-content: center;
         width: 100%;
         gap: 3.5rem;
-        padding-right: 2rem;
+
+        margin-left: 3.5rem;
     }
 
     &__item {
@@ -68,6 +69,30 @@
         left: 2rem;
 
         transform: scale(1.6);
+    }
+
+    .shopping-cart {
+        margin-left: auto;
+        font-size: 1.52rem;
+        color: var(--dark);
+
+        transition: color 0.3s ease;
+
+        .cart-icon {
+            margin-left: 1.6rem;
+            margin-bottom: -0.2rem;
+        }
+
+        .cart-text {
+            @include text-style;
+            font-size: 0.7rem;
+            width: 6rem;
+        }
+
+        &:hover {
+            color: var(--hover);
+            cursor: pointer;
+        }
     }
 }
 
@@ -117,6 +142,14 @@
         border-radius: 50%;
 
         box-shadow: 0.5px 0.5px 5px 0.1px #fff;
+    }
+
+    .shopping-cart {
+        color: var(--light);
+
+        &:hover {
+            color: var(--hover-light);
+        }
     }
 }
 

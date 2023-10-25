@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useDarkMode } from '@/context/DarkModeContext';
 import Image from 'next/image';
+import { FaShoppingCart}  from 'react-icons/fa';
 
 import '../styles/navigation.scss';
 import '../app/globals.scss';
@@ -37,6 +38,10 @@ const Navigation = () => {
                         <Link className='navigation__link' href="/about">About</Link>
                     </li>
                 </div>
+                <li className='navigation__item shopping-cart'>
+                    <FaShoppingCart className='cart-icon' />
+                    <p className='cart-text'>Shopping Cart</p>
+                </li>
             </ul>
         </nav>
     );
