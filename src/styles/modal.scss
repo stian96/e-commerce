@@ -16,6 +16,19 @@
     border-radius: 15px;
   }
 
+.modal-content.dark-mode {
+    background-color: #233446;
+
+    .modal-button {
+        color: #fff;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: green;
+        }
+    }
+}
+
 .modal-button {
     position: relative;
     left: 20.5rem;

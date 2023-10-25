@@ -40,7 +40,7 @@ const ProductPage = () => {
                 ))}
             </div>
         </div>
-        { isModalOpen && <ProductModal product={selectedProduct!}  onClose={closeModal} isModalOpen={isModalOpen}/> }
+        { isModalOpen && <ProductModal product={selectedProduct!}  onClose={closeModal} /> }
         </>
     );
 }
