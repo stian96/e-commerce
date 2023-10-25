@@ -6,12 +6,13 @@ import '../styles/card.scss';
 
 type CardProps = {
     product: Product;
+    onClick?: () => void
 }
 
-const Card: React.FC<CardProps> = ({ product }) => {
+const Card: React.FC<CardProps> = ({ product, onClick }) => {
 
     return (
-        <div className='container'>
+        <div className='container' onClick={onClick}>
             <div className='container__card'>
                 <span className='container__card-category'>{product.category}</span>
                 <div className='product-info'>
