@@ -2,7 +2,6 @@
   "name": "webapp-04",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "next build",
     "__predev": "prisma generate && prisma db push && pnpm run seed",
@@ -21,11 +20,12 @@
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "__postinstall": "prisma generate"
+    "__postinstall": "prisma generate",
+    "build:seed": "tsc --project tsconfig.scripts.json"
   },
   "prisma": {
-    "seed": "ts-node --project tsconfig.scripts.json prisma/seed.ts"
-  },  
+    "seed": "ts-node prisma/seed.ts"
+  },   
   "dependencies": {
     "@formkit/auto-animate": "^0.8.0",
     "@hookform/resolvers": "^3.3.1",

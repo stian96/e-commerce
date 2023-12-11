@@ -1,6 +1,6 @@
-import { getRandomPrice } from "@/domain/product";
-import { Category } from "@/domain/types/cartTypes";
 import { PrismaClient } from "@prisma/client"
+import { getRandomPrice } from '../src/domain/product'
+import { Category } from '@/domain/types/cartTypes';
 
 const prisma = new PrismaClient()
 
