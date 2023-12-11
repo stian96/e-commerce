@@ -5,7 +5,11 @@ const prisma = new PrismaClient()
 
 export const GET = async () => {
     try {
-        const products = await prisma.product.findMany()
+        const products = await prisma.product.findMany({
+            include: {
+                category: true,
+            }
+        })
 
         if (products.length === 0) {
             console.log("No products exists.")
