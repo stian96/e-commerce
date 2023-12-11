@@ -1,23 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from 'next/server';
+import { PrismaClient } from "@prisma/client"
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    if (req.method !== 'GET') {
-        res.setHeader('Allow', ['GET']);
-        return res.status(405).end(`Method ${req.method} Not Allowed`);
-    }
+const prisma = new PrismaClient()
 
+export const GET = async () => {
     try {
-        const products = await prisma.product.findMany();
+        const products = await prisma.product.findMany()
 
-        if (products.length > 0) {
-            res.status(200).json(products);
-        } else {
-            res.status(404).json({ message: "No products found." });
+        if (products.length === 0) {
+            console.log("No products exists.")
+            return NextResponse.json({ status: 404, message: "No products found." })
         }
+
+        console.log(`${products.length} products found!`)
+        return NextResponse.json({ status: 200, message: JSON.stringify(products) })
     } catch (error) {
-        res.status(500).json({ message: "Error fetching products" });
+        console.log(error)
+        return NextResponse.json({ status: 500, message: `Internal server error..` })
     }
 }
-
-export default handler
