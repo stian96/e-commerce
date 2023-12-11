@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Card from '../../components/Card';
 import { Product } from "../../domain/types/cartTypes";
-import { generateRandomProductList } from '../../domain/product';
 import Navigation from "@/components/Navigation";
 import ProductModal from '../products/productModal';
 import { useDarkMode } from '../../context/DarkModeContext';
@@ -19,7 +18,9 @@ const ProductPage = () => {
 
     useEffect(() => {
         fetchProducts()
-            .then(data => setProducts(data))
+            .then(data => {
+                setProducts(data)
+            })
             .catch(error => console.error(error))
     }, []);
 
