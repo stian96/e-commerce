@@ -2,6 +2,7 @@
   "name": "webapp-04",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "__predev": "prisma generate && prisma db push && pnpm run seed",
