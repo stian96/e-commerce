@@ -7,6 +7,7 @@ import { generateRandomProductList } from '../../domain/product';
 import Navigation from "@/components/Navigation";
 import ProductModal from '../products/productModal';
 import { useDarkMode } from '../../context/DarkModeContext';
+import { fetchProducts } from '../../domain/service'
 
 import '../../styles/card.scss';
 
@@ -17,7 +18,9 @@ const ProductPage = () => {
     const { isDarkMode } = useDarkMode();
 
     useEffect(() => {
-        setProducts(generateRandomProductList())
+        fetchProducts()
+            .then(data => setProducts(data))
+            .catch(error => console.error(error))
     }, []);
 
     const openModal = (product: Product) => {
