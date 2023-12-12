@@ -1,6 +1,7 @@
 'use client';
 
 import { DarkModeProvider } from '@/context/DarkModeContext';
+import { CartProvider } from '@/context/CartProvider';
 import React from 'react';
 import './globals.scss';
 
@@ -9,7 +10,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   <html lang="en">
     <body>
     <DarkModeProvider>
+      <CartProvider>
         {children}
+      </CartProvider>
     </DarkModeProvider>
     </body>
   </html>
