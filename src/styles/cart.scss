@@ -1,0 +1,14 @@
+.cart {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: lightgray;
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.cart-visible {
+    right: 0; 
+}

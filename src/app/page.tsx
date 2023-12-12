@@ -19,15 +19,10 @@ const AppContent = () => {
 }
 
 const App = () => {
-  const [isCartVisible, setIsCartVisible] = useState(false)
-
-  const toggleVisibillity = () => setIsCartVisible(!isCartVisible)
 
   return (
     <Layout>
-      <Navigation onCartIconClicked={toggleVisibillity} />
       <AppContent />
-      { isCartVisible && <Cart className={isCartVisible ? 'cart cart-visible' : 'cart'} /> }
     </Layout>
   );
 }

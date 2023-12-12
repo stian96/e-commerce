@@ -3,7 +3,7 @@ import { Product } from '../domain/types/product';
 import { useCart } from '@/context/CartProvider';
 import Image from 'next/image';
 
-import '../styles/card.scss';
+import '@/styles/card.scss';
 
 type CardProps = {
     product: Product;

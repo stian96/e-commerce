@@ -1,7 +1,6 @@
 import { createContext, useContext, useState } from "react"
 import { CartItem } from "@/domain/types/cartItem"
 import { Product } from "@/domain/types/product"
-import { set } from "zod"
 
 
 const CartContext = createContext({

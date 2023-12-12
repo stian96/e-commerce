@@ -1,5 +1,6 @@
 "use client"
 import { useCart } from "@/context/CartProvider"
+import '@/styles/cart.scss'
 
 type CartProps = {
     className?: string
