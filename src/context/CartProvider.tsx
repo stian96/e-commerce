@@ -31,7 +31,18 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       }
     
       const removeFromCart = (productId: number) => {
-        // TODO: Implement logic.
+        const existingItem = cartItems.find((item) => item.product.id === productId)
+
+        if (existingItem && existingItem.quantity > 1) {
+            // Reduce quantity.
+            setCartItems(cartItems.map((item) => (
+                item.product.id === productId ? { ...item, quantity: item.quantity - 1 } : item
+            )))
+        }
+        else {
+            // Remove product completely
+            setCartItems(cartItems.filter((item) => item.product.id !== productId))
+        }
       }
 
       const clearCart = () => {
