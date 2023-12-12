@@ -1,9 +1,11 @@
 'use client';
 
 import { useDarkMode } from '../context/DarkModeContext';
-import './globals.scss';
+import { useState } from "react"
 import Layout from './layout';
 import Navigation from '@/components/Navigation';
+
+import './globals.scss';
 
 
 const AppContent = () => {
@@ -16,9 +18,13 @@ const AppContent = () => {
 }
 
 const App = () => {
+  const [isCartVisible, setIsCartVisible] = useState(false)
+
+  const toggleVisibillity = () => setIsCartVisible(!isCartVisible)
+
   return (
     <Layout>
-      <Navigation />
+      <Navigation onCartIconClicked={toggleVisibillity} />
       <AppContent />
     </Layout>
   );

@@ -18,7 +18,10 @@ const Cart = () => {
                     <p className="cart__product-quantity">
                         Quantity: { item.quantity }
                     </p>
-                    <button className="cart__remove-btn" onClick={() => handleRemoveFromCart(item.product.id)}>
+                    <button 
+                        className="cart__remove-btn" 
+                        onClick={() => handleRemoveFromCart(item.product.id)}
+                    >
                         Remove from cart
                     </button>
                 </div>
