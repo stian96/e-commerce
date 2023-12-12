@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product } from '../domain/types/cartTypes';
+import { Product } from '../domain/types/product';
 import Image from 'next/image';
 
 import '../styles/card.scss';

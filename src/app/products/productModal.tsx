@@ -1,4 +1,4 @@
-import { Product } from '../../domain/types/cartTypes';
+import { Product } from '../../domain/types/product';
 import Card from '../../components/Card';
 import { useDarkMode } from '../../context/DarkModeContext';
 

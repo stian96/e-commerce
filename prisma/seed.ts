@@ -1,10 +1,10 @@
 import { PrismaClient } from "@prisma/client"
 import { getRandomPrice } from '../src/domain/product'
-import { Category } from '@/domain/types/cartTypes';
+
 
 const prisma = new PrismaClient()
 
-const productCategories: Category[] = ['PC', 'Phone', 'Audio', 'Camera', 'Games']
+const productCategories: string[] = ['PC', 'Phone', 'Audio', 'Camera', 'Games']
 const productData = {
     'PC': [
         { name: 'Laptop', image: '/laptop.png', description: 'A powerful laptop suitable for all your needs.' },
@@ -39,9 +39,8 @@ async function main() {
       data: { name: categoryName },
     })
 
-
     // Inserting products into the database.
-    const products = productData[categoryName]
+    const products = productData[categoryName as keyof typeof productData]
     for (const product of products) {
       await prisma.product.create({
         data: {

@@ -1,4 +1,4 @@
-import { Product } from "./types/cartTypes";
+import { Product } from "./types/product";
 
 type ResponseType = {
     status: number,

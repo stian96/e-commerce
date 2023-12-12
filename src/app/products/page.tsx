@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Card from '../../components/Card';
-import { Product } from "../../domain/types/cartTypes";
+import { Product } from '../../domain/types/product';
 import Navigation from "@/components/Navigation";
 import ProductModal from '../products/productModal';
 import { useDarkMode } from '../../context/DarkModeContext';
