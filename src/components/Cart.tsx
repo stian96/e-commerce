@@ -1,7 +1,11 @@
 "use client"
 import { useCart } from "@/context/CartProvider"
 
-const Cart = () => {
+type CartProps = {
+    className?: string
+}
+
+const Cart = ({ className }: CartProps) => {
     const { cartItems, removeFromCart } = useCart()
 
     const handleRemoveFromCart = (productId: number) => {
@@ -9,7 +13,7 @@ const Cart = () => {
     }
 
     return (
-        <div className="cart">
+        <div className={className || 'cart'}>
             { cartItems.map((item) => (
                 <div key={item.product.id}>
                     <h3 className="cart__product-name">

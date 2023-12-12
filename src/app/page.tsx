@@ -6,6 +6,7 @@ import Layout from './layout';
 import Navigation from '@/components/Navigation';
 
 import './globals.scss';
+import Cart from '@/components/Cart';
 
 
 const AppContent = () => {
@@ -26,6 +27,7 @@ const App = () => {
     <Layout>
       <Navigation onCartIconClicked={toggleVisibillity} />
       <AppContent />
+      { isCartVisible && <Cart className={isCartVisible ? 'cart cart-visible' : 'cart'} /> }
     </Layout>
   );
 }
