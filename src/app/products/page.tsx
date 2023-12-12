@@ -8,7 +8,7 @@ import ProductModal from '../products/productModal';
 import { useDarkMode } from '../../context/DarkModeContext';
 import { fetchProducts } from '../../domain/service'
 
-import '../../styles/card.scss';
+import '@/styles/card.scss';
 
 const ProductPage = () => {
     const [products, setProducts] = useState<Product[]>([]);
