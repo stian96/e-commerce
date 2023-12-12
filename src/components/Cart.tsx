@@ -5,6 +5,10 @@ import { useState } from "react"
 const Cart = () => {
     const [cartItem, setCartItem] = useState<CartItem[]>([])
 
+    const addToCart = () => {}
+    const removeFromCart = () => {}
+    const totalPrice = () => {}
+
     return (
         <div className="cart">
             { cartItem.map((item) => (
