@@ -1,5 +1,6 @@
 import React from 'react';
 import { Product } from '../domain/types/product';
+import { useCart } from '@/context/CartProvider';
 import Image from 'next/image';
 
 import '../styles/card.scss';
@@ -10,6 +11,9 @@ type CardProps = {
 }
 
 const Card: React.FC<CardProps> = ({ product, onClick }) => {
+    const { addToCart } = useCart()
+
+    const handleAddToCart = () => addToCart(product)
 
     return (
         <div className='container' onClick={onClick}>
@@ -20,7 +24,9 @@ const Card: React.FC<CardProps> = ({ product, onClick }) => {
                     <Image className='container__card-image' src={`${product.image}`} alt='Product Image' width={300} height={200} />
                     <p className='container__card-description'>{product.description}</p>
                     <p className='container__card-price'>{`${product.price} $`}</p>
-                    <button className='container__card-button' type='button'>Add to cart</button>
+                    <button className='container__card-button' type='button' onClick={handleAddToCart}>
+                        Add to cart
+                    </button>
                 </div>
             </div>
         </div>
