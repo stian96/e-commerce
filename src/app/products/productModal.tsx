@@ -1,8 +1,8 @@
 import { Product } from '../../domain/types/product';
-import Card from '../../components/Card';
+import Card from '@/components/Card';
 import { useDarkMode } from '../../context/DarkModeContext';
 
-import '../../styles/modal.scss';
+import '@/styles/modal.scss';
 
 type modalProps = {
     product: Product,

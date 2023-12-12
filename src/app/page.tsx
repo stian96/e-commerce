@@ -1,28 +1,27 @@
-'use client';
-
-import { useDarkMode } from '../context/DarkModeContext';
-import { useState } from "react"
-import Layout from './layout';
+"use client"
+import { useState } from 'react';
 import Navigation from '@/components/Navigation';
+import Cart from '@/components/Cart';
+import Home from '@/components/Home';
+import Layout from './layout';
 
 import './globals.scss';
-import Cart from '@/components/Cart';
 
-
-const AppContent = () => {
-  const { isDarkMode } = useDarkMode();
-
-  return(
-  <div className={`main-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
-  </div>
-  );
-}
 
 const App = () => {
+  const [isCartVisible, setIsCartVisible] = useState(false)
+
+  const toggleVisibillity = () => {
+    console.log("Icon clicked!")
+    setIsCartVisible(!isCartVisible)
+  }
+
 
   return (
     <Layout>
-      <AppContent />
+      <Navigation onCartIconClicked={toggleVisibillity} />
+      <Home />
+      {isCartVisible && <Cart className={isCartVisible ? 'cart cart-visible' : 'cart'} />}
     </Layout>
   );
 }

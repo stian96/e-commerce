@@ -1,20 +1,27 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
-import Card from '../../components/Card';
-import { Product } from '../../domain/types/product';
-import Navigation from "@/components/Navigation";
+import Card from '@/components/Card';
+import { Product } from '@/domain/types/product';
 import ProductModal from '../products/productModal';
-import { useDarkMode } from '../../context/DarkModeContext';
-import { fetchProducts } from '../../domain/service'
+import { useDarkMode } from '@/context/DarkModeContext';
+import { fetchProducts } from '@/domain/service'
 
 import '@/styles/card.scss';
+import Navigation from "@/components/Navigation";
+import Cart from "@/components/Cart";
 
 const ProductPage = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
     const { isDarkMode } = useDarkMode();
+    const [isCartVisible, setIsCartVisible] = useState(false)
+
+    const toggleVisibillity = () => {
+        console.log("Icon clicked!")
+        setIsCartVisible(!isCartVisible)
+    }
 
     useEffect(() => {
         fetchProducts()
@@ -36,7 +43,7 @@ const ProductPage = () => {
 
     return (
         <>
-        <Navigation />
+        <Navigation onCartIconClicked={toggleVisibillity} />
         <div className={`outer-container ${isDarkMode ? 'dark-mode' : ''}`}>
             <div className="grid-container">
                 {products.map(product => (
@@ -45,6 +52,7 @@ const ProductPage = () => {
             </div>
         </div>
         { isModalOpen && <ProductModal product={selectedProduct!}  onClose={closeModal} /> }
+        {isCartVisible && <Cart className={isCartVisible ? 'cart cart-visible' : 'cart'} />}
         </>
     );
 }
