@@ -1,17 +1,16 @@
 "use client"
-import { CartItem } from "@/domain/types/cartItem"
-import { useState } from "react"
+import { useCart } from "@/context/CartProvider"
 
 const Cart = () => {
-    const [cartItem, setCartItem] = useState<CartItem[]>([])
+    const { cartItems, removeFromCart } = useCart()
 
-    const addToCart = () => {}
-    const removeFromCart = () => {}
-    const totalPrice = () => {}
+    const handleRemoveFromCart = (productId: number) => {
+        removeFromCart(productId)
+    }
 
     return (
         <div className="cart">
-            { cartItem.map((item) => (
+            { cartItems.map((item) => (
                 <div key={item.product.id}>
                     <h3 className="cart__product-name">
                         { item.product.title }
@@ -19,7 +18,7 @@ const Cart = () => {
                     <p className="cart__product-quantity">
                         Quantity: { item.quantity }
                     </p>
-                    <button className="cart__remove-btn">
+                    <button className="cart__remove-btn" onClick={() => handleRemoveFromCart(item.product.id)}>
                         Remove from cart
                     </button>
                 </div>
