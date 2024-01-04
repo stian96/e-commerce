@@ -31,6 +31,7 @@ const ProductPage = () => {
         fetchProducts()
             .then(data => {
                 setProducts(data)
+                setFilteredProducts(data)
             })
             .catch(error => console.error(error))
     }, []);
@@ -59,11 +60,11 @@ const ProductPage = () => {
         <>
         <Navigation onCartIconClicked={toggleVisibillity} />
         <div className={`product-content ${isDarkMode ? 'dark-mode' : ''}`}>
-            <Sidebar />
+            <Sidebar onCategoryselected={handleCategorySelection} />
             <div className='outer-container'>
             <ItemsCount count={ products.length }/>
                 <div className="grid-container">
-                    {products.map(product => (
+                    {filteredProducts.map(product => (
                         <Card key={product.id} product={product} onClick={() => openModal(product)}/>
                     ))}
                 </div>
