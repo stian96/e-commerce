@@ -18,6 +18,7 @@ const ProductPage = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+    const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
     const { isDarkMode } = useDarkMode();
     const [isCartVisible, setIsCartVisible] = useState(false)
 
@@ -43,6 +44,16 @@ const ProductPage = () => {
         setSelectedProduct(null);
         setIsModalOpen(false);
     };
+
+    const handleCategorySelection = (category: string) => {
+        if (category === 'All') {
+            setFilteredProducts(products)
+        }
+        else {
+            const filtered = products.filter(product => product.category.name === category)
+            setFilteredProducts(filtered)
+        }
+    }
 
     return (
         <>
