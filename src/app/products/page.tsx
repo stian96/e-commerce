@@ -47,9 +47,9 @@ const ProductPage = () => {
     return (
         <>
         <Navigation onCartIconClicked={toggleVisibillity} />
-        <div className='product-content'>
+        <div className={`product-content ${isDarkMode ? 'dark-mode' : ''}`}>
             <Sidebar />
-            <div className={`outer-container ${isDarkMode ? 'dark-mode' : ''}`}>
+            <div className='outer-container'>
             <ItemsCount count={ products.length }/>
                 <div className="grid-container">
                     {products.map(product => (

@@ -9,6 +9,7 @@
 }
 
 .navigation {
+    font-family: 'Roboto Slab', serif;
     padding-bottom: 1rem;
 
     &__banner {
@@ -60,7 +61,7 @@
             color:rgb(65, 65, 65);
             @include link-style;
             &:hover {
-                color: var(--hover);
+                text-decoration: underline;
             }
         }
     }
