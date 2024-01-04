@@ -11,8 +11,10 @@
   }
   
 .modal-content {
+    height: 90%;
+    width: 70%;
+
     background-color: #fff;
-    padding: 1.5rem;
     border-radius: 15px;
   }
 
@@ -31,10 +33,10 @@
 
 .modal-button {
     position: relative;
-    left: 20.5rem;
-    bottom: 0.8rem;
+    top: 1rem;
+    left: 60rem;
 
-    font-size: 1.07rem;
+    font-size: 1.5rem;
     font-weight: 600;
 
     background: none;
@@ -42,6 +44,7 @@
 
     &:hover {
         color: green;
+        cursor: pointer;
     }
   }
   

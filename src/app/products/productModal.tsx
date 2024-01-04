@@ -1,5 +1,5 @@
 import { Product } from '../../domain/types/product';
-import Card from '@/components/Card';
+import ProductView from '@/components/ProductView';
 import { useDarkMode } from '../../context/DarkModeContext';
 
 import '@/styles/modal.scss';
@@ -17,7 +17,7 @@ const ProductModal: React.FC<modalProps> = ({ product, onClose}) => {
         <div className='modal-overlay'>
             <div className={`modal-content ${isDarkMode ? 'dark-mode' : ''}`}>
             <button className='modal-button' onClick={onClose}>X</button>
-                <Card product={product} /> 
+                <ProductView product={product} /> 
             </div>
         </div>
     );

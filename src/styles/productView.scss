@@ -1,0 +1,24 @@
+.view {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+
+    &__info {
+        margin-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        &-title {
+            font-size: 1.2rem;
+            color: rgb(54, 54, 54);
+            text-decoration: underline;
+        }
+
+        &-product, &-price {
+            font-size: 1.5rem;
+        }
+
+    }
+
+}
