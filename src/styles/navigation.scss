@@ -57,7 +57,7 @@
 
     &__item {
         a {
-            color: var(--dark);
+            color:rgb(65, 65, 65);
             @include link-style;
             &:hover {
                 color: var(--hover);

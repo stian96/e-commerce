@@ -5,10 +5,12 @@ import Card from '@/components/Card';
 import { Product } from '@/domain/types/product';
 import ProductModal from '../products/productModal';
 import ItemsCount from "@/components/ItemsCount";
+import Sidebar from "@/components/Sidebar";
 import { useDarkMode } from '@/context/DarkModeContext';
 import { fetchProducts } from '@/domain/service'
 
 import '@/styles/card.scss';
+import '@/styles/products.scss';
 import Navigation from "@/components/Navigation";
 import Cart from "@/components/Cart";
 
@@ -45,14 +47,19 @@ const ProductPage = () => {
     return (
         <>
         <Navigation onCartIconClicked={toggleVisibillity} />
-        <div className={`outer-container ${isDarkMode ? 'dark-mode' : ''}`}>
-        <ItemsCount count={ products.length }/>
-            <div className="grid-container">
-                {products.map(product => (
-                    <Card key={product.id} product={product} onClick={() => openModal(product)}/>
-                ))}
+        <main className="product-content">
+            <div className="sidebar-container">
+                <Sidebar />
             </div>
-        </div>
+            <div className={`outer-container ${isDarkMode ? 'dark-mode' : ''}`}>
+            <ItemsCount count={ products.length }/>
+                <div className="grid-container">
+                    {products.map(product => (
+                        <Card key={product.id} product={product} onClick={() => openModal(product)}/>
+                    ))}
+                </div>
+            </div>
+        </main>
         { isModalOpen && <ProductModal product={selectedProduct!}  onClose={closeModal} /> }
         {isCartVisible && <Cart className={isCartVisible ? 'cart cart-visible' : 'cart'} />}
         </>
