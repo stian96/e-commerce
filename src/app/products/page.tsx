@@ -47,10 +47,8 @@ const ProductPage = () => {
     return (
         <>
         <Navigation onCartIconClicked={toggleVisibillity} />
-        <main className="product-content">
-            <div className="sidebar-container">
-                <Sidebar />
-            </div>
+        <div className='product-content'>
+            <Sidebar />
             <div className={`outer-container ${isDarkMode ? 'dark-mode' : ''}`}>
             <ItemsCount count={ products.length }/>
                 <div className="grid-container">
@@ -59,7 +57,7 @@ const ProductPage = () => {
                     ))}
                 </div>
             </div>
-        </main>
+        </div>
         { isModalOpen && <ProductModal product={selectedProduct!}  onClose={closeModal} /> }
         {isCartVisible && <Cart className={isCartVisible ? 'cart cart-visible' : 'cart'} />}
         </>

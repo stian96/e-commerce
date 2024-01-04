@@ -1,0 +1,36 @@
+@import 'mixins.scss';
+
+.sidebar {
+    @include flex-container;
+    flex-direction: column;
+
+    margin-right: 2rem;
+    font-family: 'Roboto Slab', serif;
+
+    &__title {
+        color: rgb(65, 65, 65);
+        margin-left: -7rem;
+    }
+
+    &__content {
+        list-style: none;
+
+        &-items {
+            margin: 1rem 0 1rem 0;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            &-line {
+                height: 1.5px;
+                width: 13rem;
+                background-color: rgb(185, 185, 185);
+                display: block;
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+}
+
