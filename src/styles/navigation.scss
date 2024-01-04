@@ -12,7 +12,7 @@
     padding-bottom: 1rem;
 
     &__banner {
-        padding: 0.87rem;
+        padding: 0.87rem 1.5rem 0.87rem 1.5rem;
         background: var(--gray);
         margin-bottom: 0.3rem;
 
@@ -23,6 +23,7 @@
             @include text-style;
             color: var(--dark);
             text-transform: uppercase;
+
         }
 
         .navigation__mode {
@@ -42,7 +43,7 @@
         padding: 1rem 0;
 
         list-style: none;
-        padding: 0;
+        padding: 0 1rem 0 1rem;
     }
 
     &__link-container {

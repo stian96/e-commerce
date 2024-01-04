@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Card from '@/components/Card';
 import { Product } from '@/domain/types/product';
 import ProductModal from '../products/productModal';
+import ItemsCount from "@/components/ItemsCount";
 import { useDarkMode } from '@/context/DarkModeContext';
 import { fetchProducts } from '@/domain/service'
 
@@ -45,6 +46,7 @@ const ProductPage = () => {
         <>
         <Navigation onCartIconClicked={toggleVisibillity} />
         <div className={`outer-container ${isDarkMode ? 'dark-mode' : ''}`}>
+        <ItemsCount count={ products.length }/>
             <div className="grid-container">
                 {products.map(product => (
                     <Card key={product.id} product={product} onClick={() => openModal(product)}/>

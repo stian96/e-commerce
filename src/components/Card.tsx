@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({ product, onClick }) => {
                 <span className='container__card-category'>{product.category.name}</span>
                 <div className='product-info'>
                     <h2 className='container__card-title'>{product.title}</h2>
-                    <Image className='container__card-image' src={`${product.image}`} alt='Product Image' width={300} height={200} />
+                    <Image className='container__card-image' src={`${product.image}`} alt='Product Image' width={300} height={320} />
                     <p className='container__card-description'>{product.description}</p>
                     <p className='container__card-price'>{`${product.price} $`}</p>
                     <button className='container__card-button' type='button' onClick={handleAddToCart}>

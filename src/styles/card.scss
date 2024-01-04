@@ -50,6 +50,7 @@
 
         &-title {
             font-size: 1.2rem;
+            color: rgb(99, 99, 99);
         }
 
         &-image {
@@ -110,6 +111,10 @@
                 background-color: var(--hover-light);
             }
         }
+    }
+
+    .items-count {
+        color: #fff;
     }
 }
 
