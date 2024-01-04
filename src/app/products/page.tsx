@@ -62,7 +62,7 @@ const ProductPage = () => {
         <div className={`product-content ${isDarkMode ? 'dark-mode' : ''}`}>
             <Sidebar onCategoryselected={handleCategorySelection} />
             <div className='outer-container'>
-            <ItemsCount count={ products.length }/>
+            <ItemsCount count={ filteredProducts.length }/>
                 <div className="grid-container">
                     {filteredProducts.map(product => (
                         <Card key={product.id} product={product} onClick={() => openModal(product)}/>

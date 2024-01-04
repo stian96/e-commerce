@@ -5,6 +5,7 @@ type Props = {
 }
 
 const ItemsCount = ({ count }: Props) => {
+
     return (
         <>
         <span className="items-count">Items: {count}</span>
