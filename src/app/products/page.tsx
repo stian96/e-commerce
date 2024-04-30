@@ -58,20 +58,20 @@ const ProductPage = () => {
 
     return (
         <>
-        <Navigation onCartIconClicked={toggleVisibillity} />
-        <div className={`product-content ${isDarkMode ? 'dark-mode' : ''}`}>
-            <Sidebar onCategoryselected={handleCategorySelection} />
-            <div className='outer-container'>
-            <ItemsCount count={ filteredProducts.length }/>
-                <div className="grid-container">
-                    {filteredProducts.map(product => (
-                        <Card key={product.id} product={product} onClick={() => openModal(product)}/>
-                    ))}
+            <Navigation onCartIconClicked={toggleVisibillity} />
+            <div className={`product-content ${isDarkMode ? 'dark-mode' : ''}`}>
+                <Sidebar onCategoryselected={handleCategorySelection} />
+                <div className='outer-container'>
+                <ItemsCount count={ filteredProducts.length }/>
+                    <div className="grid-container">
+                        {filteredProducts.map(product => (
+                            <Card key={product.id} product={product} onClick={() => openModal(product)}/>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
-        { isModalOpen && <ProductModal product={selectedProduct!}  onClose={closeModal} /> }
-        {isCartVisible && <Cart className={isCartVisible ? 'cart cart-visible' : 'cart'} />}
+            { isModalOpen && <ProductModal product={selectedProduct!}  onClose={closeModal} /> }
+            {isCartVisible && <Cart className={isCartVisible ? 'cart cart-visible' : 'cart'} />}
         </>
     );
 }

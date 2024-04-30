@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Cart from '@/components/Cart';
 import Home from '@/components/Home';
-import Layout from './layout';
 
 import './globals.scss';
 
@@ -18,11 +17,11 @@ const App = () => {
 
 
   return (
-    <Layout>
+    <>
       <Navigation onCartIconClicked={toggleVisibillity} />
       <Home />
       {isCartVisible && <Cart className={isCartVisible ? 'cart cart-visible' : 'cart'} />}
-    </Layout>
+    </>
   );
 }
 
