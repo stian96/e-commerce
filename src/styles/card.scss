@@ -19,7 +19,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem 1rem;
+    gap: 1.5rem 1.5rem;
 
     margin: 1.5rem auto;
 }
@@ -92,7 +92,7 @@
     .container__card {
         background-color: #243544;
         border: none;
-        box-shadow: 1px 3px 10px 1px #495d6e;
+        box-shadow: 0.5px 0.5px 4px 1px #495d6e;
 
         &-category {
             background-color: var(--light);
@@ -115,6 +115,13 @@
 
     .items-count {
         color: #fff;
+    }
+
+    .sidebar {
+
+        &__title, &__content {
+            color: #fff;
+        }
     }
 }
 
