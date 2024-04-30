@@ -4,9 +4,29 @@
     right: -400px;
     width: 400px;
     height: 100%;
-    background-color: lightgray;
+    background-color: rgb(255, 255, 255);
     box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.2);
     z-index: 1;
+
+    padding: 1rem;
+
+    &__item-container {
+        display: flex;
+    }
+
+    &__close {
+        background: none;
+        border: none;
+        font-size: 1.35rem;
+        font-weight: 500;
+        float: right;
+        transition: 0.3s ease;
+
+        &:hover {
+            color: green;
+            cursor: pointer;
+        }
+    }
 }
 
 .cart-visible {
