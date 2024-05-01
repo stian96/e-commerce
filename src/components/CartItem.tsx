@@ -10,17 +10,15 @@ export const CartItems = ({ item, removeFromCart }: CartItemProps) => {
 
     return (
         <div className='cart__item-container' key={item.product.id}>
-            <h3 className="cart__product-name">{item.product.title}</h3>
-            <p className="cart__product-quantity">{item.quantity}</p>
-            <p>{item.product.price}</p>
-            {/*
+            <p className="cart__item-container__product-name">{item.product.title}</p> 
+            <p className="cart__item-container__product-quantity">{item.quantity}</p>
+            <p className="cart__item-container__product-price">{item.product.price}</p>
             <button 
-                className="cart__remove-btn" 
+                className="cart__item-container__remove-btn" 
                 onClick={() => removeFromCart(item.product.id)}
             >
-                Remove from cart
+                X
             </button>
-            */}
         </div>
     );
 };

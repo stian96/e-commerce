@@ -30,7 +30,10 @@ const Cart = ({ isOpen, closeCart }: CartProps) => {
                     <CartLabel array={['Product', 'Quantity', 'Price']}/>
                 </div>
                 {cartItems.map((item) => (
-                    <CartItems item={item} removeFromCart={handleRemoveFromCart}/>
+                    <>
+                        <CartItems item={item} removeFromCart={handleRemoveFromCart}/>
+                        <span className='line-separator'></span>
+                    </>
                 ))}
             </div>
         </div>
