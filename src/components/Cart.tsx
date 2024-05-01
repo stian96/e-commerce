@@ -11,11 +11,7 @@ type CartProps = {
 }
 
 const Cart = ({ isOpen, closeCart }: CartProps) => {
-    const { cartItems, removeFromCart } = useCart()
-
-    const handleRemoveFromCart = (productId: number) => {
-        removeFromCart(productId)
-    }
+    const { cartItems } = useCart()
 
     return (
         <div className={isOpen ? 'cart cart-visible' : 'cart'}>
@@ -31,7 +27,7 @@ const Cart = ({ isOpen, closeCart }: CartProps) => {
                 </div>
                 {cartItems.map((item) => (
                     <>
-                        <CartItems item={item} removeFromCart={handleRemoveFromCart}/>
+                        <CartItems item={item} />
                         <span className='line-separator'></span>
                     </>
                 ))}
