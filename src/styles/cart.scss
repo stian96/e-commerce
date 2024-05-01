@@ -1,31 +1,59 @@
+@import 'mixins.scss';
+
 .cart {
     position: fixed;
     top: 0;
     right: -400px;
-    width: 400px;
+    width: 800px;
     height: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(245, 244, 244);
     box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.2);
     z-index: 1;
 
     padding: 1rem;
 
-    &__item-container {
+    &__header {
         display: flex;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+
+        &-close {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            transition: 0.3s ease;
+    
+            &:hover {
+                color: green;
+                cursor: pointer;
+            }
+        }
+
+        &-title {
+            @include title-style;
+        }
     }
 
-    &__close {
-        background: none;
-        border: none;
-        font-size: 1.35rem;
-        font-weight: 500;
-        float: right;
-        transition: 0.3s ease;
+    &__product-container {
+        width: 80%;
+        max-width: 550px;
+        min-width: 300px;
 
-        &:hover {
-            color: green;
-            cursor: pointer;
-        }
+        padding: 2.5rem 4.5rem;
+        margin-left: 1rem;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    &__title-container {
+        @include cart-flex;
+        margin-bottom: 2rem;
+        @include medium-title-style;
+    }
+
+    &__item-container {
+        @include cart-flex;
+        padding-bottom: 2rem;
     }
 }
 

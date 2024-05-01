@@ -5,10 +5,29 @@
     align-items: center;
 }
 
+@mixin cart-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @mixin link-style {
     font-size: 1.25rem;
     text-decoration: none;
     transition: color 0.4s ease;
+}
+
+@mixin title-style {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+@mixin medium-title-style {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: rgba(56, 56, 56, 0.946);
 }
 
 @mixin text-style {
