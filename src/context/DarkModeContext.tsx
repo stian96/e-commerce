@@ -16,17 +16,22 @@ interface DarkModeProviderProps {
 
 // The provider of the darkmode context.
 export const DarkModeProvider: React.FC<DarkModeProviderProps> = ({ children }) => {
-    const [isDarkMode, setDarkMode] = useState<boolean>(() => {
-        return JSON.parse(localStorage.getItem('darkMode') || 'false') as boolean
-    });
+    const [isDarkMode, setDarkMode] = useState<boolean>(false);
 
     const toggleDarkMode = () => {
-        setDarkMode((prev: any) => !prev)
+        setDarkMode(prevMode => {
+            const newMode = !prevMode;
+            localStorage.setItem('darkMode', JSON.stringify(newMode));
+            return newMode;
+        });
     }
 
     useEffect(() => {
-        localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    }, [isDarkMode]);
+        const darkMode = localStorage.getItem('darkMode');
+        if (darkMode) {
+            setDarkMode(true);
+        }
+    }, []);
 
     return (
         <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
