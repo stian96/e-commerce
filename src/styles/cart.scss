@@ -6,6 +6,7 @@
     right: -710px;
     width: 650px;
     height: 100%;
+    overflow-y: auto;
     background-color: rgb(245, 244, 244);
     box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -15,6 +16,7 @@
     padding-right: 2rem;
 
     transition: right 0.5s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
 
     &__header {
         display: flex;
@@ -62,7 +64,7 @@
 
         &__product-name, &__product-quantity, &__product-price {
             flex: 1;
-            font-size: 1.08rem;
+            font-size: 1.05rem;
         }
 
         &__product-price {

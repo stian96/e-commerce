@@ -4,6 +4,7 @@ import { CartItems } from './CartItem'
 import { FaArrowLeft } from 'react-icons/fa'
 import { useCart } from '@/context/CartProvider'
 import '@/styles/cart.scss'
+import { OrderSummary } from './OrderSummary'
 
 type CartProps = {
     isOpen: boolean
@@ -32,6 +33,7 @@ const Cart = ({ isOpen, closeCart }: CartProps) => {
                     </>
                 ))}
             </div>
+            <OrderSummary />
         </div>
     )
 }

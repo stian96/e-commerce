@@ -10,12 +10,6 @@
     --light-blue: #CDF5FD;
 }
 
-.outer-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
