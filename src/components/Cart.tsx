@@ -1,5 +1,7 @@
 "use client"
-import { Dispatch, SetStateAction } from 'react'
+import { CartLabel } from './CartLabel'
+import { CartItems } from './CartItem'
+import { FaArrowLeft } from 'react-icons/fa'
 import { useCart } from '@/context/CartProvider'
 import '@/styles/cart.scss'
 
@@ -17,28 +19,20 @@ const Cart = ({ isOpen, closeCart }: CartProps) => {
 
     return (
         <div className={isOpen ? 'cart cart-visible' : 'cart'}>
-            <button className='cart__close' onClick={closeCart}>
-                X
-            </button>
-            { cartItems.map((item) => (
-                <div className='cart__item-container' key={item.product.id}>
-                    <h3 className="cart__product-name">
-                       Product: { item.product.title }
-                    </h3>
-                    <p className="cart__product-quantity">
-                        Quantity: { item.quantity }
-                    </p>
-                    <p>
-                        Price: { item.product.price }
-                    </p>
-                    <button 
-                        className="cart__remove-btn" 
-                        onClick={() => handleRemoveFromCart(item.product.id)}
-                    >
-                        Remove from cart
-                    </button>
+            <div className='cart__header'>
+                <button className='cart__header-close' onClick={closeCart}>
+                    <FaArrowLeft />
+                </button>
+                <h1 className='cart__header-title'>Shopping Cart</h1>
+            </div>
+            <div className='cart__product-container'>
+                <div className='cart__title-container'>
+                    <CartLabel array={['Product', 'Quantity', 'Price']}/>
                 </div>
-            ))}
+                {cartItems.map((item) => (
+                    <CartItems item={item} removeFromCart={handleRemoveFromCart}/>
+                ))}
+            </div>
         </div>
     )
 }
