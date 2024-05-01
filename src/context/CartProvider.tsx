@@ -55,7 +55,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
       const decreaseQuantity = (productId: number) => {
         const updatedItems = cartItems.map(item => (
-            item.product.id === productId ? {...item, quantity: item.quantity - 1} : item
+            item.product.id === productId ? {
+                ...item, 
+                quantity: item.quantity > 1 ? item.quantity - 1 : 1
+            } : item
         ));
         setCartItems(updatedItems);
 

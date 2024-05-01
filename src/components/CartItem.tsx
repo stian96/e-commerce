@@ -18,7 +18,9 @@ export const CartItems = ({ item }: CartItemProps) => {
                 <p className="cart__item-container__product-quantity">{item.quantity}</p>
                 <button onClick={() => increaseQuantity(item.product.id)}><FaPlus /></button>
             </div>
-            <p className="cart__item-container__product-price">{item.product.price}</p>
+            <p className="cart__item-container__product-price">
+                {(item.product.price * item.quantity).toFixed(2)}
+            </p>
             <button 
                 className="cart__item-container__remove-btn" 
                 onClick={() => removeFromCart(item.product.id)}
