@@ -13,7 +13,10 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({ product, onClick }) => {
     const { addToCart } = useCart()
 
-    const handleAddToCart = () => addToCart(product)
+    const handleAddToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
+        addToCart(product);
+    }
 
     return (
         <div className='container' onClick={onClick}>
