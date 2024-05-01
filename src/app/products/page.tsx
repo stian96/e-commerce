@@ -71,7 +71,7 @@ const ProductPage = () => {
                 </div>
             </div>
             { isModalOpen && <ProductModal product={selectedProduct!}  onClose={closeModal} /> }
-            {isCartVisible && <Cart isOpen={isCartVisible} closeCart={toggleVisibillity} />}
+            <Cart isOpen={isCartVisible} closeCart={toggleVisibillity} />
         </>
     );
 }

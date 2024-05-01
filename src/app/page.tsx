@@ -20,7 +20,7 @@ const App = () => {
     <>
       <Navigation onCartIconClicked={toggleVisibillity} />
       <Home />
-      {isCartVisible && <Cart isOpen={isCartVisible} closeCart={toggleVisibillity} />}
+      <Cart isOpen={isCartVisible} closeCart={toggleVisibillity} />
     </>
   );
 }

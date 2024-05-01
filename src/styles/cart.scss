@@ -3,7 +3,7 @@
 .cart {
     position: fixed;
     top: 0;
-    right: -400px;
+    right: -710px;
     width: 650px;
     height: 100%;
     background-color: rgb(245, 244, 244);
@@ -13,7 +13,9 @@
     padding-top: 1rem;
     padding-left: 1rem;
     padding-right: 2rem;
-    
+
+    transition: right 0.5s ease-in-out;
+
     &__header {
         display: flex;
         gap: 1rem;
