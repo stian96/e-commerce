@@ -65,9 +65,26 @@
             font-size: 1.08rem;
         }
 
-        &__product-quantity {
+        &__product-price {
             position: relative;
-            left: 1.5rem;
+            left: 8px;
+        }
+
+        &__quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+
+            margin-right: 8.5rem;
+        }
+
+        &__quantity-control > button {
+            background: none;
+            border: none;
+            font-size: 0.65rem;
+            color: rgba(113, 113, 113, 0.946);
+            cursor: pointer;
         }
 
         &__remove-btn {
